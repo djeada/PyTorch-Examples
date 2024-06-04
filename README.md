@@ -1,6 +1,7 @@
 # PyTorch
 
-PyTorch tutorials.
+This repository is a comprehensive collection of tutorials, code examples, and resources for learning and mastering PyTorch, an open-source machine learning framework. It is designed to help beginners, students, researchers, and professionals understand and effectively use PyTorch for building and deploying machine learning models.
+
 * https://youtube.com/playlist?list=PLqnslRFeH2UrcDBWF5mfPGpqQDSta6VK4
 * https://youtube.com/playlist?list=PLZbbT5o_s2xrfNyHZsM6ufI0iZENK9xgG
 * http://www.if.pw.edu.pl/~tomgrad/sn.html
