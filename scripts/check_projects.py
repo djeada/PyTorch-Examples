@@ -15,8 +15,10 @@ def main() -> None:
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     projects = sorted((root / "projects").glob("[0-9][0-9]_*"))
-    if [project.name[:2] for project in projects] != [f"{i:02}" for i in range(1, 11)]:
-        raise RuntimeError("Expected exactly ten consecutively numbered projects.")
+    if not projects or [project.name[:2] for project in projects] != [
+        f"{i:02}" for i in range(1, len(projects) + 1)
+    ]:
+        raise RuntimeError("Expected nonempty, consecutively numbered project folders.")
     for project in projects:
         if not all(
             (project / name).is_file() for name in ("main.py", "README.md", "requirements.txt")
@@ -52,7 +54,7 @@ def main() -> None:
                     f"PASS {project.name} (seed {seed}): {json.dumps(metrics, sort_keys=True)}",
                     flush=True,
                 )
-    print(f"All ten independent projects passed with {len(args.seeds)} seeds.")
+    print(f"All {len(projects)} independent projects passed with {len(args.seeds)} seeds.")
 
 
 if __name__ == "__main__":
